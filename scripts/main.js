@@ -1,6 +1,7 @@
-import { Walkers } from './Walkers.js';
+import { Walkers } from './Walkers.js'; //Walkers is the full unordered list of walkers' names
 import { CityList } from './CityList.js';
 import { Assignments } from './Assignments.js';
+import { RegisteredPets } from './RegisteredPets.js';
 
 const mainContainer = document.querySelector('#container');
 
@@ -17,12 +18,15 @@ const applicationHTML = `
     </section>
     <section class="detail--column list details__cities">
         <h2>Pets</h2>
+        ${RegisteredPets()}
     </section>
 </article>
 
 <article class="assignments">
+<section class="detail--column list details__cities">
     <h2>Current Assignments</h2>
     ${Assignments()}
+    </section>
 </article>
 `;
 

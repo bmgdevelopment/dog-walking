@@ -10,52 +10,52 @@ const database = {
         id: 1,
         name: "Alphonse Meron",
         email: "ameron0@mashable.com",
-        city: "Chicago"
+        cityId: 1
     }, {
         id: 2,
         name: "Damara Pentecust",
         email: "dpentecust1@apache.org",
-        city: "White Plains"
+        cityId: 2
     }, {
         id: 3,
         name: "Anna Bowton",
         email: "abowton2@wisc.edu",
-        city: "Sarasota"
+        cityId: 3
     }, {
         id: 4,
         name: "Hunfredo Drynan",
         email: "hdrynan3@bizjournals.com",
-        city: "San Diego"
+        cityId: 4
     }, {
         id: 5,
         name: "Elmira Bick",
         email: "ebick4@biblegateway.com",
-        city: "Boise"
+        cityId: 5
     }, {
         id: 6,
         name: "Bernie Dreger",
         email: "bdreger5@zimbio.com",
-        city: "Denver"
+        cityId: 6
     }, {
         id: 7,
         name: "Rolando Gault",
         email: "rgault6@google.com",
-        city: "Tucson"
-    }, {
+        cityId: 7
+        }, {
         id: 8,
         name: "Tiffanie Tubby",
         email: "ttubby7@intel.com",
-        city: "Phoenix"
+        cityId: 8
     }, {
         id: 9,
         name: "Tomlin Cutill",
         email: "tcutill8@marketwatch.com",
-        city: "Minneapolis"
+        cityId: 9
     }, {
         id: 10,
         name: "Arv Biddle",
         email: "abiddle9@cafepress.com",
-        city: "Pittsburgh"
+        cityId: 10
     }],
     pets: [{
         id: 1,
@@ -97,21 +97,59 @@ const database = {
         id: 10,
         name: "Panda",
         walkerId: 7
+    }],
+    cities: [{
+        id: 1,
+        cityName: "Chicago"
+    },{
+        id: 2,
+        cityName: "White Plains" 
+    },{
+        id: 3,
+        cityName: "Sarasota" 
+    },{
+        id: 4,
+        cityName: "San Diego" 
+    },{
+        id: 5,
+        cityName: "Boise"
+    },{
+        id: 6,
+        cityName: "Denver" 
+    },{
+        id: 7,
+        cityName: "Tucson"
+    },{
+        id: 8,
+        cityName: "Phoenix"
+    },{
+        id: 9,
+        cityName: "Minneapolis" 
+    },{
+        id: 10,
+        cityName: "Pittsburgh"
     }]
 }
 
-export const getWalkers = () => {
+export const getWalkers = () => { //exported to Walkers.js & CityList.js; contains new array of all dog walkers' info
     return database.walkers.map(walker => ({...walker})) //spelled out reference below
 }
 
-export const getPets = () => {
+export const getPets = () => { //exported to RegisteredPets.js; contains new array of all pets' info
     return database.pets.map(pet => ({...pet}))
 }
 
+export const getCities = () => {
+    return database.cities.map(city => ({...city})) //exports cities array
+}
+
+// Long version of export above
+// export const getWalkers = () => {
 // return database.walkers.map(walker => {
 //     const newWalker = {}
 //     newWalker.id = walker.id
 //     newWalker.name = walker.name
 //     newWalker.walkerId = walker.walkerId
 //     return newWalker
-//   })
+//   }
+// }
